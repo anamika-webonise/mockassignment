@@ -1,0 +1,60 @@
+html, body {
+	color: black;
+	font: normal normal normal 14px/1.6 Arial, sans-serif;
+}
+
+body {
+	color: black;
+	background-color: gray;
+	position: absolute; 
+	top: 0; 
+	right: 0; 
+	bottom: 0; 
+	left: 0; 
+	opacity: 1; 
+	overflow-x:hidden;
+}
+
+.header{ 
+	color: white;
+	height: 70px; 
+	background: black; 
+	position: relative;
+	top: -10px;
+	border-top: 1px solid black; 
+	right: -10px;
+	left: -.5px; 
+	width: 600px
+	
+	
+	}
+	
+tr{
+	padding: 20px;
+	margin-bottom: 20px;	
+}
+
+
+#content{
+	position: relative;
+	top: -32px;
+	background: white;
+	height: 590px;
+	width: 600px;
+	
+}
+
+#footer{
+	color: white;
+	height: 70px; 
+	background: black; 
+	position: relative;
+	bottom: -30px;
+	padding-top: 30px;
+	}
+
+.lbl{
+	margin-left: -190px;
+	
+}
+
