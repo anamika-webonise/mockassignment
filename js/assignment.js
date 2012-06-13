@@ -14,16 +14,18 @@ function check()
 
     if (name=='' )
     {
-        msg="Student Name should not be blank,";
+        msg=" Name should not be blank,";
         flag=1;
     }
 
-    if (!(isNaN(name)) )
+    if(name!='')
     {
-        msg+=' Student Name should not numeric,';
-        flag=1;
+        if (!(isNaN(name)) )
+        {
+            msg+='  Name should not be numeric,';
+            flag=1;
+        }
     }
-
     if (email=='')
     {
         msg+=' Student Email Id is required,';
@@ -43,63 +45,81 @@ function check()
     
     if (age=='')
     {
-        msg+=' Student Age not be blank ,';
+        msg+=' Age should not be blank ,';
         flag=1;
     }
-
-    if (isNaN(age))
+    
+    if (age!='')
     {
-        msg+=' Student Age should be numeric,';
-        flag=1;
+        if (isNaN(age))
+        {
+            msg+='  Age should be numeric,';
+            flag=1;
+        }
     }
-
-    if (age < 18 || age > 65)
+    
+    if (age!='')
     {
-        msg+=" Age should be between 18 and 100,";
-        flag=1;
+        if (age < 18 || age > 65)
+        {
+            msg+=" Age should be between 18 and 100,";
+            flag=1;
+        }
     }
 
     if (address=='')
     {
-        msg+=' Student Address not be blank, ';
+        msg+='  Address should not be blank, ';
         flag=1;
     }
-
-    if (!(isNaN(address)))
+    
+    if (address!='')
     {
-        msg+=' Student Address not be numeric,';
-        flag=1;
+        if (!(isNaN(address)))
+        {
+            msg+='  Address should not be numeric,';
+            flag=1;
+        }
     }
-
+    
     if (description=='')
     {
-        msg+=' Student Description not be blank ,';
+        msg+='  Description should not be blank ,';
         flag=1;
     }
-
-    if (!(isNaN(description)))
+    
+    if (description!='')
     {
-        msg+=' Student Description not be numeric,';
-        flag=1;
+        if (!(isNaN(description)))
+        {
+            msg+='  Description should not be numeric,';
+            flag=1;
+        }
     }
 
     if (pin=='' )
     {
-        msg+=' Student Pin Code not be blank ,';
-        flag=1;
-    } 
-
-    if (isNaN(pin))
-    {
-        msg+=' Student Pin Code should be numeric,';
+        msg+=' Pin Code should not be blank ,';
         flag=1;
     } 
     
-    /*if (pin.length!=5 && pin.length!=10)
+    if (pin!='' )
     {
-        msg+=" Student Pin Code should be atleast 5 digit long and not more than 10 digit,";
-        flag=1;
-    }*/
+        if (isNaN(pin))
+        {
+            msg+=' Pin Code should be numeric,';
+            flag=1;
+        } 
+    }
+    
+    if (pin!='' )
+    {
+        if (pin.length<5 && pin.length>10)
+        {
+            msg+=" Pin Code should be atleast 5 digit long and not more than 10 digit,";
+            flag=1;
+        }
+    }
     
     if(flag==1)
     {
@@ -117,7 +137,7 @@ function check()
 
 function post_data()
 {
- alert($('#pin').val().toString());  
+ //alert($('#pin').val().toString());  
     var data1={
                             "user":{
                             "name":$('#name').val().toString(),
